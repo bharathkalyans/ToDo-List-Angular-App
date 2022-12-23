@@ -1,0 +1,19 @@
+<div class="row my-3">
+  <h5 [ngClass]="{ strike: !todo.isActive }">
+    {{ todo.title }}
+  </h5>
+  <p [ngClass]="{ strike: !todo.isActive }">{{ todo.description }}</p>
+  <div class="form-group form-check mb-2">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="doneCheckbox{{i}}"
+      (click)="onCheckBoxClick(todo)"
+      [checked]="!todo.isActive"
+    />
+    <label class="form-check-label" for="doneCheckbox{{i}}" >Done!</label>
+  </div>
+  <div class="btn btn-sm btn-danger w-25" (click)="onClickDelete(todo)">
+    Delete
+  </div>
+</div>
